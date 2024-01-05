@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.service.annotation.PatchExchange;
 
 import jakarta.validation.Valid;
 
@@ -27,7 +26,7 @@ public interface ClienteAPI {
 	@ResponseStatus(code = HttpStatus.OK)
 	List<ClienteListResponse> getTodosClientes();
 	
-	@PostMapping(value = "/{cliente}")
+	@GetMapping(value = "/{idCliente}")
 	@ResponseStatus(code = HttpStatus.OK)
 	ClienteDetalhadoResponse  getClienteAtravesId(@PathVariable UUID idCliente);
 
