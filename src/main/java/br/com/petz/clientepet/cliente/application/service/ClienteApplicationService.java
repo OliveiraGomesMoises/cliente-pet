@@ -43,4 +43,12 @@ private final  ClienteRepository clienteRepository;
 		return new ClienteDetalhadoResponse(cliente);
 	}
 
+	@Override
+	public void deletaClienteAtravesId(UUID idCliente) {
+		log.info("[inicia ]ClienteApplicationService - deletaClienteAtravesId");
+		Cliente cliente	= clienteRepository.buscaClienteAtravesId(idCliente);
+		log.info("[inicia ]ClienteApplicationService - deletaClienteAtravesId");
+		
+	}
+
 }
