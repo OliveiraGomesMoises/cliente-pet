@@ -16,4 +16,6 @@ public interface ClienteService {
 	ClienteDetalhadoResponse bucaClienteAtravesId(UUID idCliente);
 
 	void deletaClienteAtravesId(UUID idCliente);
+
+	ClienteDetalhadoResponse getClienteAtravesId(UUID idCliente);
 }

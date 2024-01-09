@@ -47,8 +47,15 @@ private final  ClienteRepository clienteRepository;
 	public void deletaClienteAtravesId(UUID idCliente) {
 		log.info("[inicia ]ClienteApplicationService - deletaClienteAtravesId");
 		Cliente cliente	= clienteRepository.buscaClienteAtravesId(idCliente);
-		log.info("[inicia ]ClienteApplicationService - deletaClienteAtravesId");
+        clienteRepository.deletaCliente(cliente);
+		log.info("[finaliza ]ClienteApplicationService - deletaClienteAtravesId");
 		
+	}
+
+	@Override
+	public ClienteDetalhadoResponse getClienteAtravesId(UUID idCliente) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
