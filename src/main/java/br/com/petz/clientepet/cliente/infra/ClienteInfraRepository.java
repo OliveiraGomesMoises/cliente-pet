@@ -3,7 +3,6 @@ package br.com.petz.clientepet.cliente.infra;
 import java.util.List;
 import java.util.UUID;
 
-import javax.management.RuntimeErrorException;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
