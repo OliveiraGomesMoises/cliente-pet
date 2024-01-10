@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
+import br.com.petz.clientepet.cliente.application.api.ClienteAlteracaoRequest;
 import br.com.petz.clientepet.cliente.application.api.ClienteDetalhadoResponse;
 import br.com.petz.clientepet.cliente.application.api.ClienteListResponse;
 import br.com.petz.clientepet.cliente.application.api.ClienteRequest;
@@ -53,9 +54,22 @@ private final  ClienteRepository clienteRepository;
 	}
 
 	@Override
-	public ClienteDetalhadoResponse getClienteAtravesId(UUID idCliente) {
-		// TODO Auto-generated method stub
-		return null;
+	public void patchAlteraCliente(UUID idCliente, ClienteAlteracaoRequest clienteAlteracaoRequest) {
+		log.info("[inicia ]ClienteApplicationService - patchAlteraCliente");
+		Cliente cliente	= clienteRepository.buscaClienteAtravesId(idCliente);
+		cliente.altera(clienteAlteracaoRequest);
+        clienteRepository.salva(cliente);
+        log.info("[finaliza ]ClienteApplicationService - patchAlteraCliente");
 	}
+
+	@Override
+	public ClienteDetalhadoResponse getClienteAtravesId(UUID idCliente) {
+		log.info("[inicia ]ClienteApplicationService - getClienteAtravesId");
+		Cliente cliente = clienteRepository.buscaClienteAtravesId(idCliente);
+		log.info("[finaliza ]ClienteApplicationService - getClienteAtravesId");
+		return new ClienteDetalhadoResponse(cliente);
+	}
+
+	
 
 }
