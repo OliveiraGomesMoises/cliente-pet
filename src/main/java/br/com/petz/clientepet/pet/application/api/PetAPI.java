@@ -12,18 +12,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.petz.clientepet.cliente.application.api.ClienteDetalhadoResponse;
 import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/v1/cliente/{idCliente}/pet")
-public interface PetAPI{
+public interface PetAPI {
 	@PostMapping
 	@ResponseStatus(code = HttpStatus.CREATED)
-	PetResponse postPet(@PathVariable UUID idCliente,
-			@Valid @RequestBody PetRequest petRequest);
-	
+	PetResponse postPet(@PathVariable UUID idCliente, @Valid @RequestBody PetRequest petRequest);
+
 	@GetMapping
 	@ResponseStatus(code = HttpStatus.OK)
 	List<PetClienteListResponse> getPetsDoClienteComId(@PathVariable UUID idCliente);
+
+	@GetMapping(value = "/{idPet}")
+	@ResponseStatus(code = HttpStatus.OK)
+	ClienteDetalhadoResponse getClienteAtravesId(@PathVariable UUID idCliente , @PathVariable UUID idPet);
 
 }
