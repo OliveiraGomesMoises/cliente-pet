@@ -46,7 +46,14 @@ public class PetController implements PetAPI {
 	    petService.deletePetDoClienteComID(idCliente , idPet);
 		log.info("[finaliza] PetControlle - deletePetDoClienteComId");
 	}
-	
+	@Override
+	public void patchPet(UUID idCliente, UUID idPet, @Valid PetAlteracaoRequest petAlteracaoRequest) {
+			log.info("[inicia] PetControlle - patchPet");
+			log.info("[idCliente] {} - [idPet] {}", idCliente , idPet);
+			log.info("[finaliza] PetControlle - patchPet");
+		}
+		
+	}
 	
 
-}
+
