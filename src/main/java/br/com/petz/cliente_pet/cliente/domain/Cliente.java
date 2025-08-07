@@ -42,7 +42,19 @@ import java.util.UUID;
         public LocalDateTime dataHoraDoCadastro;
         public LocalDateTime daraHoraDaUltimaAlteracao;
 
+//        public Cliente(UUID idCliente, String nomeCompleto, String email, String celular, String telefone, Sexo sexo, LocalDate dataNascimento, String cpf, Boolean aceitaTermos) {
+//            this.idCliente = idCliente;
+//            this.nomeCompleto = nomeCompleto;
+//            this.email = email;
+//            this.celular = celular;
+//            this.telefone = telefone;
+//            this.sexo = sexo;
+//            this.dataNascimento = dataNascimento;
+//            this.cpf = cpf;
+//            this.aceitaTermos = aceitaTermos;
+//        }
     }
+
 
 
 
