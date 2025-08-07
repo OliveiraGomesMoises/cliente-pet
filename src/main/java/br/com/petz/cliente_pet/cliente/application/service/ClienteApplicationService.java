@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Log4j2
 @RequiredArgsConstructor
 public class ClienteApplicationService implements ClienteService {
-    private final ClienteRepository clienteRepository
+    private final ClienteRepository clienteRepository;
     @Override
     public ClienteResponse criaCliente(ClienteRequest clienteRequest) {
         log.info("[inicia] ClienteApplicationService - criaCliente");
