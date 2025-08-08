@@ -1,8 +1,11 @@
 package br.com.petz.cliente_pet.cliente.application.api;
 
 import br.com.petz.cliente_pet.cliente.application.service.ClienteService;
+import br.com.petz.cliente_pet.handler.ApiException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -33,7 +36,7 @@ public class ClienteController implements ClienteAPI {
     @Override
     public ClienteDetalhadoResponse getClientePorId(UUID idCliente) {
         log.info("[inicia] ClienteController - getClientePorId");
-        log.info("[idClinete] {}",idCliente);
+        log.info("[idCliente] {}",idCliente);
         ClienteDetalhadoResponse clienteDetalhado = clienteService.buscaClientePorId(idCliente);
         log.info("[finaliza] ClienteController - getClientePorId");
         return clienteDetalhado;
@@ -55,6 +58,4 @@ public class ClienteController implements ClienteAPI {
         clienteService.alteraClientePorId(idCliente, clienteAlteracaoRequest);
         log.info("[finaliza] ClienteController - patchAlteraCliente");
     }
-
-
 }
